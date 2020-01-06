@@ -5,7 +5,7 @@ Dit project is gemaakt met:
 
 Stefan
 Lars
-Rick De coole Kikker
+Rick De coole Kikker 1
 Lamar
 Remco
 Dominique
