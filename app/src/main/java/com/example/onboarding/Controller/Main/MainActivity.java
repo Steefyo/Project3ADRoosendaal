@@ -1,8 +1,10 @@
-package com.example.onboarding;
+package com.example.onboarding.Controller.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.onboarding.R;
 
 public class MainActivity extends AppCompatActivity {
 
