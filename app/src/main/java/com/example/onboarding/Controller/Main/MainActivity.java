@@ -16,8 +16,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     public void Send(View view) {
         Intent intent = new Intent(this, VideoPagina.class);
         startActivity(intent);
     }
+
 }
