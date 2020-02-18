@@ -16,13 +16,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Send();
     }
 
     public void Send() {
         Intent intent = new Intent(this, MenuActivity.class);
-        startActivity(intent);
     }
-
 }
