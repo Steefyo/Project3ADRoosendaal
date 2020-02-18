@@ -1,4 +1,4 @@
-package com.example.onboarding;
+package com.example.onboarding.Controller.MenuPagina;
 
 import android.content.Intent;
 

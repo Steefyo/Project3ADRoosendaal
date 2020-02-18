@@ -1,4 +1,4 @@
-package com.example.onboarding;
+package com.example.onboarding.Controller.MenuPagina;
 
 import java.util.ArrayList;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.onboarding.R;
 
 public class MenuAdapter extends BaseAdapter {
     private ArrayList<MenuModel> list;

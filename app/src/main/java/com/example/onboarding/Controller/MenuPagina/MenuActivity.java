@@ -1,4 +1,4 @@
-package com.example.onboarding;
+package com.example.onboarding.Controller.MenuPagina;
 
 import java.util.ArrayList;
 import android.app.Activity;
@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+
+import com.example.onboarding.Controller.PersonalPagina.PersonalActivity;
+import com.example.onboarding.Controller.VideoPagina.VideoPagina;
+import com.example.onboarding.R;
+import com.example.onboarding.Controller.SocialPagina.SocialActivity;
 
 public class MenuActivity extends Activity {
 
@@ -50,13 +55,17 @@ public class MenuActivity extends Activity {
         // Create an intent (the page where the item is linked to)
         // Fill the model
         // Add to the array
+        Intent intentVideo =  new Intent(this, VideoPagina.class);
+        MenuModel modelVideo = new MenuModel(R.drawable.ic_launcher_foreground, "Video's", intentVideo);
+        results.add(modelVideo);
+
         Intent intentSocial =  new Intent(this, SocialActivity.class);
-        MenuModel newModel1 = new MenuModel(R.drawable.ic_launcher_background, "Social media", intentSocial);
-        results.add(newModel1);
+        MenuModel modelSocial = new MenuModel(R.drawable.ic_launcher_background, "Social media", intentSocial);
+        results.add(modelSocial);
 
         Intent intentPersonal =  new Intent(this, PersonalActivity.class);
-        MenuModel newModel2 = new MenuModel(R.drawable.ic_launcher_foreground, "Personal info", intentPersonal);
-        results.add(newModel2);
+        MenuModel modelPersonal = new MenuModel(R.drawable.ic_launcher_foreground, "Personal info", intentPersonal);
+        results.add(modelPersonal);
 
         // Return the array
         return results;

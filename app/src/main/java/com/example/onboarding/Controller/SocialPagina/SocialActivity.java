@@ -1,7 +1,9 @@
-package com.example.onboarding;
+package com.example.onboarding.Controller.SocialPagina;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.example.onboarding.R;
 
 public class SocialActivity extends Activity {
 
