@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeActivity">
+
+    <ImageView
+        android:id="@+id/ivHeader"
+        android:layout_width="427dp"
+        android:layout_height="359dp"
+        android:layout_marginBottom="511dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/header_img" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="180dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="318dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="144dp"
+        android:text="Volgende"
+        android:drawableLeft="@drawable/arrow_right"
+        android:textColor="@color/White"
+        android:background="@drawable/btn_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivHeader" />
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/frutigerltstdbold"
+        android:text="Welkom!"
+        android:textColor="@color/White"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.314" />
+
+    <TextView
+        android:id="@+id/tvWelcomText"
+        android:layout_width="353dp"
+        android:layout_height="271dp"
+        android:text="TextView"
+        android:paddingLeft="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivHeader" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
