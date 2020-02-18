@@ -19,6 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Controller.MenuPagina.MenuActivity" />
+        <activity android:name=".Controller.SocialPagina.SocialActivity" />
+        <activity android:name=".Controller.PersonalPagina.PersonalActivity" />
     </application>
 
 </manifest>
