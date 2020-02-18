@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,7 +16,6 @@ import androidx.fragment.app.Fragment;
 
 import com.example.onboarding.R;
 
-import org.w3c.dom.Text;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +27,7 @@ public class CardFragment extends Fragment {
     private Integer counter;
     private String[] Youtube = {"rSwPBNu2Li8","ZjJUVsmjIj4","so4FwjfQ7YI","rSwPBNu2Li8"};
     private String[] Titels = {"Gekke Titel", "Gekke Titel2", "Gekke Titel3" ,"Gekke Titel4"};
+
 
     public CardFragment() {
         // Required empty public constructor
@@ -49,6 +50,7 @@ public class CardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_card, container, false);
     }
 
@@ -58,21 +60,23 @@ public class CardFragment extends Fragment {
             WebView mWebView = view.findViewById(R.id.mWebView);
             mWebView.getSettings().setJavaScriptEnabled(true);
             mWebView.getSettings().setPluginState(WebSettings.PluginState.ON);
-            mWebView.setWebViewClient(new WebViewClient());
             mWebView.loadUrl("http://www.youtube.com/embed/" + Youtube[counter]);
+            mWebView.setWebViewClient(new WebViewClient() {
+                public void onPageFinished(WebView view, String url) {
+                    view.findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+                }
+            });
 
             TextView TvTitel = view.findViewById(R.id.LabelTitel);
             TvTitel.setText(Titels[counter]);
 
             if(counter == Youtube.length -1){
-                
+                Button btnExit = view.findViewById(R.id.ExitKnop);
+                btnExit.setVisibility(View.VISIBLE);
             }
 
         }catch(Exception e){
             //zodat de app niet crashed
         }
-
-
-
     }
 }
