@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public void Send(View view) {
         Intent intent = new Intent(this, VideoPagina.class);
         startActivity(intent);
+
     }
 
 }
