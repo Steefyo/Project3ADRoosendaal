@@ -36,14 +36,16 @@
 
     <Button
         android:id="@+id/ExitKnop"
-        android:layout_width="35dp"
-        android:layout_height="37dp"
-        android:layout_gravity="bottom|right"
-        android:background="@drawable/ic_arrow_right_circle"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_shape"
+        android:text="Button"
+        android:textColor="@color/White"
+        android:textSize="20sp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.997"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mWebView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
