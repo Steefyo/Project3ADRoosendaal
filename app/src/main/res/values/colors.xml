@@ -10,6 +10,7 @@
     <color name="Black">#000</color>
 
     <color name="accentBlue">#1055AC</color>
+    <color name="accentBlue64">#A81055AC</color>
     <color name="accentGreenCyan">#10AC84</color>
     <color name="accentOrange">#FF9500</color>
     <color name="accentYellowGreen">#7DAC10</color>

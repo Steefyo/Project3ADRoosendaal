@@ -1,11 +1,12 @@
 package com.example.onboarding.Controller.SocialPagina;
 
-import android.app.Activity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.onboarding.R;
 
-public class SocialActivity extends Activity {
+public class SocialActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
