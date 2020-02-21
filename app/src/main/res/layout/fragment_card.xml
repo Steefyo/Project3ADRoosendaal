@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Controller.VideoPagina.CardFragment"
-    tools:context=".CardFragment"
     >
 
     <TextView
@@ -21,17 +20,17 @@
         android:layout_width="match_parent"
         android:layout_height="292dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="50px"
-        android:layout_marginRight="50px" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp" />
 
     <TextView
         android:id="@+id/LabelTitel"
         android:layout_width="186dp"
         android:layout_height="35dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="400px"
+        android:layout_marginTop="400dp"
         android:gravity="center"
-        android:textSize="32dp"
+        android:textSize="32sp"
         android:text="TextView" />
 
 </FrameLayout>

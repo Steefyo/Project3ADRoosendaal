@@ -1,7 +1,5 @@
 package com.example.onboarding.Controller.MenuPagina;
 
-import java.util.ArrayList;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,12 +7,16 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.onboarding.Controller.PersonalPagina.PersonalActivity;
+import com.example.onboarding.Controller.SocialPagina.SocialActivity;
 import com.example.onboarding.Controller.VideoPagina.VideoPagina;
 import com.example.onboarding.R;
-import com.example.onboarding.Controller.SocialPagina.SocialActivity;
 
-public class MenuActivity extends Activity {
+import java.util.ArrayList;
+
+public class MenuActivity extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
