@@ -14,4 +14,8 @@
     <color name="accentGreenCyan">#10AC84</color>
     <color name="accentOrange">#FF9500</color>
     <color name="accentYellowGreen">#7DAC10</color>
+
+    <color name="gradientBlue">#5454CA</color>
+    <color name="gradientPink">#CB356C</color>
+
 </resources>

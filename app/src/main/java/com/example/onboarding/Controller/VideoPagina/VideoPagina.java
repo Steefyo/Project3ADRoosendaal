@@ -3,6 +3,8 @@ package com.example.onboarding.Controller.VideoPagina;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
+import android.view.View;
+
 import com.example.onboarding.R;
 
 public class VideoPagina extends AppCompatActivity {
