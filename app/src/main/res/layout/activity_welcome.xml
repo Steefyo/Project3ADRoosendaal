@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".Controller.WelcomePagina.WelcomeActivity">
     tools:context=".WelcomeActivity">
 
     <ImageView
@@ -27,6 +28,7 @@
         android:layout_marginEnd="170dp"
         android:layout_marginBottom="144dp"
         android:text="Volgende"
+        android:textColor="@color/White"
         android:drawableLeft="@drawable/arrow_right"
         android:textColor="@color/White"
         android:background="@drawable/btn_shape"
