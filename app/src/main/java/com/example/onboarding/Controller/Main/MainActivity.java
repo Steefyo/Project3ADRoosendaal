@@ -4,10 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
-import com.example.onboarding.Controller.MenuPagina.MenuActivity;
-import com.example.onboarding.Controller.VideoPagina.VideoPagina;
+import com.example.onboarding.Controller.WelcomePagina.WelcomeActivity;
 import com.example.onboarding.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Send() {
-        Intent intent = new Intent(this, MenuActivity.class);
+        Intent intent = new Intent(this, WelcomeActivity.class);
+        startActivity(intent);
     }
 }

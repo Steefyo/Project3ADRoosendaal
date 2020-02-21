@@ -22,6 +22,7 @@
         <activity android:name=".Controller.MenuPagina.MenuActivity" />
         <activity android:name=".Controller.SocialPagina.SocialActivity" />
         <activity android:name=".Controller.PersonalPagina.PersonalActivity" />
+        <activity android:name=".Controller.WelcomePagina.WelcomeActivity" />
     </application>
 
 </manifest>

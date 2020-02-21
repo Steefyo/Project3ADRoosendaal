@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Onboarding</string>
+    <string name="txtButton">Volgende</string>
+    <string name="txtWelcome">Het is bijna zover. Het schooljaar gaat
+        bijna beginnen. Om alle informatie op
+        een rijtje te krijgen hebben we het
+        proces overzichtelijk gemaakt. In
+        dit proces vertellen we over de school
+        en de omgeving. Klik op de volgende
+        knop om het proces te starten.</string>
+    <string name="txtHeader">Welkom!</string>
 </resources>

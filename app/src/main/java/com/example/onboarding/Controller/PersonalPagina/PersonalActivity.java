@@ -1,11 +1,12 @@
 package com.example.onboarding.Controller.PersonalPagina;
 
-import android.app.Activity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.onboarding.R;
 
-public class PersonalActivity extends Activity {
+public class PersonalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
