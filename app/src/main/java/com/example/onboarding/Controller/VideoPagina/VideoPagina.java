@@ -2,9 +2,13 @@ package com.example.onboarding.Controller.VideoPagina;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
+
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.onboarding.Controller.MenuPagina.MenuActivity;
 import com.example.onboarding.R;
 
 public class VideoPagina extends AppCompatActivity {
@@ -23,4 +27,10 @@ public class VideoPagina extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(this);
         return adapter;
     }
+
+    public void TerugKnop(View view) {
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
+    }
+
 }

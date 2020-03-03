@@ -43,6 +43,7 @@
         android:textColor="@color/White"
         android:textSize="20sp"
         android:visibility="gone"
+        android:onClick="TerugKnop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
