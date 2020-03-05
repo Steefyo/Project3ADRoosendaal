@@ -70,7 +70,7 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
             counter = getArguments().getInt(ARG_COUNT);
         }
         Videos = new ArrayList<>();
-        helper = new VolleyHelper(getContext(), "https://192.168.1.2/Api/api.php");
+        helper = new VolleyHelper(getContext(), "http://192.168.1.2/Api/api.php");
         helper.get("api.php", null, this, this);
     }
 
@@ -115,7 +115,6 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
             for(int i = 0; i < VideoArray.length(); i++) {
                 Videos.add(new Video(VideoArray.getJSONObject(i)));
             }
-
             for(Video video : Videos) {
                 Log.d("Video", video.getId());
             }
