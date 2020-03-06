@@ -1,21 +1,14 @@
 package com.example.onboarding.Controller.VideoPagina;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,10 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.example.onboarding.Controller.MenuPagina.MenuActivity;
-import com.example.onboarding.Controller.WelcomePagina.WelcomeActivity;
 import com.example.onboarding.Helpers.VolleyHelper;
-import com.example.onboarding.Model.Video.Video;
 import com.example.onboarding.R;
 
 import org.json.JSONArray;
@@ -46,7 +36,7 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
     private Integer counter;
 
     private VolleyHelper helper;
-    private ArrayList<Video> Videos;
+    private ArrayList<String> Videos;
 
     private String[] Youtube = {"rSwPBNu2Li8", "ZjJUVsmjIj4", "so4FwjfQ7YI", "rSwPBNu2Li8"};
     private String[] Titels = {"Gekke Titel", "Gekke Titel2", "Gekke Titel3", "Gekke Titel4"};
@@ -69,8 +59,8 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
         if (getArguments() != null) {
             counter = getArguments().getInt(ARG_COUNT);
         }
-        Videos = new ArrayList<>();
-        helper = new VolleyHelper(getContext(), "http://192.168.1.2/Api/api.php");
+        Videos = new ArrayList<String>();
+        helper = new VolleyHelper(getContext(), "http://145.48.228.130/Api"); //Vul hier je eigen ipv4 in
         helper.get("api.php", null, this, this);
     }
 
@@ -110,16 +100,16 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
 
     @Override
     public void onResponse(JSONObject jsonObject) {
-        try {
-            JSONArray VideoArray = jsonObject.getJSONArray("videos");
-            for(int i = 0; i < VideoArray.length(); i++) {
-                Videos.add(new Video(VideoArray.getJSONObject(i)));
-            }
-            for(Video video : Videos) {
-                Log.d("Video", video.getId());
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+//        try {
+//
+//            JSONArray array = jsonObject.getJSONArray("item");
+//            for(int i = 0 ; i < array.length() ; i++){
+//                Videos.add(array.getJSONObject(i).getString("VideoId"));
+//            }
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+        //TODO Make Api work lmao
     }
     }
