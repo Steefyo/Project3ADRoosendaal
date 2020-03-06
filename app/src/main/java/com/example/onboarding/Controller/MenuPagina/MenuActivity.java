@@ -37,14 +37,14 @@ public class MenuActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                // Get model from certain position
-                Object o = lv1.getItemAtPosition(position);
+            // Get model from certain position
+            Object o = lv1.getItemAtPosition(position);
 
-                // Convert model
-                MenuModel menuModel = (MenuModel) o;
+            // Convert model
+            MenuModel menuModel = (MenuModel) o;
 
-                // Redirect using the intent
-                startActivity(menuModel.getPage());
+            // Redirect using the intent
+            startActivity(menuModel.getPage());
             }
         });
     }
@@ -55,19 +55,16 @@ public class MenuActivity extends AppCompatActivity {
 
         // Insert an item
         // Create an intent (the page where the item is linked to)
+        // status is going to connect to the database
+
+        //TODO: Database connection for the status of each menu item
+        MenuStatusModel dbclass = new MenuStatusModel("sgoever", 1, 0, 0, 0, 0, 0);
+
         // Fill the model
         // Add to the array
-        Intent intentVideo =  new Intent(this, VideoPagina.class);
-        MenuModel modelVideo = new MenuModel(R.drawable.ic_launcher_foreground, "Video's", intentVideo);
-        results.add(modelVideo);
-
-        Intent intentSocial =  new Intent(this, SocialActivity.class);
-        MenuModel modelSocial = new MenuModel(R.drawable.ic_launcher_background, "Social media", intentSocial);
-        results.add(modelSocial);
-
-        Intent intentPersonal =  new Intent(this, PersonalActivity.class);
-        MenuModel modelPersonal = new MenuModel(R.drawable.ic_launcher_foreground, "Personal info", intentPersonal);
-        results.add(modelPersonal);
+        results.add(new MenuModel(R.drawable.ic_launcher_foreground, "Video's", new Intent(this, VideoPagina.class), dbclass.getFaseVideo()));
+        results.add(new MenuModel(R.drawable.ic_launcher_background, "Social media", new Intent(this, SocialActivity.class), dbclass.getFaseSocial()));
+        results.add(new MenuModel(R.drawable.ic_launcher_foreground, "Personal info", new Intent(this, PersonalActivity.class), dbclass.getFasePraktisch()));
 
         // Return the array
         return results;

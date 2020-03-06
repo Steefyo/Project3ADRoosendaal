@@ -1,8 +1,6 @@
-package com.example.onboarding.Controller.MenuPagina;
+package com.example.onboarding.Controller.SocialPagina;
 
-import java.util.ArrayList;
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +10,13 @@ import android.widget.TextView;
 
 import com.example.onboarding.R;
 
-public class MenuAdapter extends BaseAdapter {
-    private ArrayList<MenuModel> list;
+import java.util.ArrayList;
+
+public class SocialAdapter extends BaseAdapter {
+    private ArrayList<SocialModel> list;
     private LayoutInflater layoutInflater;
 
-    public MenuAdapter(Context context, ArrayList<MenuModel> listData) {
+    public SocialAdapter(Context context, ArrayList<SocialModel> listData) {
         this.list = listData;
         layoutInflater = LayoutInflater.from(context);
     }
@@ -37,12 +37,12 @@ public class MenuAdapter extends BaseAdapter {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
+        SocialAdapter.ViewHolder holder;
         if (convertView == null) {
             // Set the correct menu items styling
-            convertView = layoutInflater.inflate(R.layout.activity_menu_row, null);
+            convertView = layoutInflater.inflate(R.layout.activity_social_row, null);
 
-            holder = new ViewHolder();
+            holder = new SocialAdapter.ViewHolder();
 
             // Define the fields which need to change based on input
             holder.image = (ImageView) convertView.findViewById(R.id.image);
@@ -50,19 +50,12 @@ public class MenuAdapter extends BaseAdapter {
 
             convertView.setTag(holder);
         } else {
-            holder = (ViewHolder) convertView.getTag();
+            holder = (SocialAdapter.ViewHolder) convertView.getTag();
         }
 
         // Fill the items with the corresponding data.
         holder.title.setText(list.get(position).getTitle());
         holder.image.setImageResource(list.get(position).getImage());
-
-        // Change color based on status
-        if (list.get(position).getStatus() == 0) {
-            holder.title.setBackgroundColor(Color.argb(66, 16, 85, 172));   // Blue
-        } else {
-            holder.title.setBackgroundColor(Color.argb(66, 16, 172, 35));   // Green
-        }
 
         return convertView;
     }
@@ -71,5 +64,4 @@ public class MenuAdapter extends BaseAdapter {
         TextView title;
         ImageView image;
     }
-
 }
