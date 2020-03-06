@@ -4,24 +4,24 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Video {
-    String Id, Titel;
+    String VideoId, VideoTitel;
 
-    public String getId() {
-        return Id;
+    public String GetVideoId() {
+        return VideoId;
     }
 
-    public String getTitel() {
-        return Titel;
+    public String GetVideoTitel() {
+        return VideoTitel;
     }
 
-    public Video(String id, String titel) {
-        Id = id;
-        Titel = titel;
+    public Video(String videoId, String videoTitel) {
+        VideoId = videoId;
+        VideoTitel = videoTitel;
     }
 
     public Video(JSONObject json) throws JSONException {
-        this.Id = json.getString("Id");
-        this.Titel = json.getString("Titel");
+        this.VideoId = json.getString("VideoId");
+        this.VideoTitel = json.getString("VideoTitel");
     }
 
 }
