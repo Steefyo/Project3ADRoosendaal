@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.onboarding.Controller.WelcomePagina.WelcomeActivity;
+import com.example.onboarding.Controller.MenuPagina.MenuActivity;
 import com.example.onboarding.R;
 
 public class InfoActivity extends AppCompatActivity {
@@ -19,7 +19,7 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        buttonTerug = (Button) findViewById(R.id.buttonTerug);
+        buttonTerug = findViewById(R.id.buttonTerug);
         buttonTerug.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +29,7 @@ public class InfoActivity extends AppCompatActivity {
     }
 
     public void sluitInfoActivity() {
-        Intent intent = new Intent(this, WelcomeActivity.class);
+        Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
     }
 }

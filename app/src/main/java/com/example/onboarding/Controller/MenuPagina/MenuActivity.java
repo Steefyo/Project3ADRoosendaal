@@ -9,6 +9,8 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.onboarding.Controller.FeedbackPagina.FeedbackActivity;
+import com.example.onboarding.Controller.InfoPagina.InfoActivity;
 import com.example.onboarding.Controller.PersonalPagina.PersonalActivity;
 import com.example.onboarding.Controller.SocialPagina.SocialActivity;
 import com.example.onboarding.Controller.VideoPagina.VideoPagina;
@@ -65,6 +67,8 @@ public class MenuActivity extends AppCompatActivity {
         results.add(new MenuModel(R.drawable.ic_launcher_foreground, "Video's", new Intent(this, VideoPagina.class), dbclass.getFaseVideo()));
         results.add(new MenuModel(R.drawable.ic_launcher_background, "Social media", new Intent(this, SocialActivity.class), dbclass.getFaseSocial()));
         results.add(new MenuModel(R.drawable.ic_launcher_foreground, "Personal info", new Intent(this, PersonalActivity.class), dbclass.getFasePraktisch()));
+        results.add(new MenuModel(R.drawable.ic_launcher_background, "Info", new Intent(this, InfoActivity.class), dbclass.getFaseAboutR()));
+        results.add(new MenuModel(R.drawable.ic_launcher_foreground, "Feedback", new Intent(this, FeedbackActivity.class), 0));
 
         // Return the array
         return results;
