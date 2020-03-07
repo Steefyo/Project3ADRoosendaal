@@ -1,5 +1,7 @@
 package com.example.onboarding.Controller.VideoPagina;
 
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +18,7 @@ import androidx.fragment.app.Fragment;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.example.onboarding.Controller.Main.MainActivity;
 import com.example.onboarding.Helpers.VolleyHelper;
 import com.example.onboarding.Model.Video.Video;
 import com.example.onboarding.R;
@@ -48,7 +51,7 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
     private String[] Youtube = {"rSwPBNu2Li8", "ZjJUVsmjIj4", "so4FwjfQ7YI", "rSwPBNu2Li8"};
     private String[] Titels = {"Gekke Titel", "Gekke Titel2", "Gekke Titel3", "Gekke Titel4"};
 
-    private String iets = "";
+    private String iets = "Hallo";
 
     public CardFragment() {
         // Required empty public constructor
@@ -72,7 +75,6 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
         Titel = new ArrayList<String>();
         ids = new ArrayList<String>();
 
-
         helper = new VolleyHelper(getContext(), "http://145.48.228.130/Api"); //Vul hier je eigen ipv4 in
         helper.get("api.php", null, this, this);
     }
@@ -95,8 +97,15 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
             for(Video video : Videos) {
                 ids.add(video.GetVideoId());
                 Titel.add(video.GetVideoTitel());
-            }
 
+                iets = video.GetVideoTitel();
+            }
+            TextView TvTitel = this.getView().findViewById(R.id.LabelTitel);
+            TvTitel.setText(Titel.get;
+            WebView mWebView = this.getView().findViewById(R.id.mWebView);
+            mWebView.getSettings().setJavaScriptEnabled(true);
+            mWebView.setWebViewClient(new WebViewClient());
+            mWebView.loadUrl("http://www.youtube.com/embed/" + ids.get(counter));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -111,8 +120,6 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
         super.onViewCreated(view, savedInstanceState);
         try {
 
-            TextView TvTitel = view.findViewById(R.id.LabelTitel);
-            TvTitel.setText(iets);
             WebView mWebView = view.findViewById(R.id.mWebView);
             mWebView.getSettings().setJavaScriptEnabled(true);
             mWebView.setWebViewClient(new WebViewClient());
@@ -126,11 +133,11 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
         } catch (Exception e) {
             //niks nog
         }
-    }
 
+
+    }
     @Override
     public void onErrorResponse(VolleyError error) {
         Log.e("Volley Error", error.toString());
     }
-
 }

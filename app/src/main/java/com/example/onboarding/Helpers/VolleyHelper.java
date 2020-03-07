@@ -8,7 +8,6 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.onboarding.Controller.VideoPagina.CardFragment;
 
 import org.json.JSONObject;
 
@@ -23,6 +22,7 @@ public class VolleyHelper {
         this.baseUrl = baseUrl;
         this.imageLoader = new ImageLoader(requestQueue, new BitmapLruCache());
     }
+
 
     private String contructUrl(String method){
         return baseUrl + "/" + method;
