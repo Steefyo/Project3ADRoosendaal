@@ -3,7 +3,6 @@ package com.example.onboarding.Controller.VideoPagina;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -64,13 +63,12 @@ public class VideoPagina extends AppCompatActivity implements Response.Listener<
             for (Aantal aantal : Aantal){
                adapter.setN(aantal.getAantal());
             }
+
             viewPager = findViewById(R.id.view_pager);
             viewPager.setAdapter(createCardAdapter());
 
         }catch (JSONException e){
             System.out.println(e);
         }
-
-
     }
 }
