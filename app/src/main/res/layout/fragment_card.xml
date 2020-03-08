@@ -7,6 +7,12 @@
     tools:context=".Controller.VideoPagina.CardFragment"
     >
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:srcCompat="@drawable/ic_header_img_small" />
+
     <WebView
         android:id="@+id/mWebView"
         android:layout_width="405dp"

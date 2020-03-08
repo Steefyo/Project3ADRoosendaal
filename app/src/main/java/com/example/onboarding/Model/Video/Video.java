@@ -23,5 +23,4 @@ public class Video {
         this.VideoId = json.getString("VideoId");
         this.VideoTitel = json.getString("VideoTitel");
     }
-
 }
