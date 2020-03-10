@@ -45,8 +45,8 @@ public class SocialAdapter extends BaseAdapter {
             holder = new SocialAdapter.ViewHolder();
 
             // Define the fields which need to change based on input
-            holder.image = (ImageView) convertView.findViewById(R.id.image);
-            holder.title = (TextView) convertView.findViewById(R.id.title);
+            holder.image = convertView.findViewById(R.id.image);
+            holder.title = convertView.findViewById(R.id.title);
 
             convertView.setTag(holder);
         } else {

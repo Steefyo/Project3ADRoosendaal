@@ -11,7 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.VideoPagina.VideoPagina"></activity>
         <activity android:name=".Controller.Main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Controller.VideoPagina.VideoPagina"></activity>
         <activity android:name=".Controller.FeedbackPagina.FeedbackActivity" />
         <activity android:name=".Controller.InfoPagina.InfoActivity" />
         <activity android:name=".Controller.MenuPagina.MenuActivity" />
         <activity android:name=".Controller.SocialPagina.SocialActivity" />
         <activity android:name=".Controller.PersonalPagina.PersonalActivity" />
-        <activity android:name=".Controller.WelcomePagina.WelcomeActivity" />
     </application>
 
 </manifest>
