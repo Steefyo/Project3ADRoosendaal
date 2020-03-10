@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller.FeedbackPagina.FeedbackActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="420dp"
+        android:layout_height="277dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501"
+        app:srcCompat="@drawable/header_img" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="413dp"
+        android:layout_height="594dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="6dp"
+            tools:layout_editor_absoluteY="231dp">
+
+            <ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="1000dp">
+
+                <TextView
+                    android:id="@+id/tekstFeedbackMenu"
+                    android:layout_width="380dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Welkom bij de feedback, hieronder hebben wij een aantal vragen klaar staan voor u. We zouden het zeer op prijs stellen als u deze vragen op waarheid kunt beantwoorden."
+                    android:textColor="@color/Black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textFeedback1"
+                    android:layout_width="210dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="48dp"
+                    android:gravity="center"
+                    android:text="Hoe goed heb je deze app en de school leren kennen met behulp van deze onboarding?"
+                    android:textColor="@color/Black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tekstFeedbackMenu"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/tekstFeedbackMenu"
+                    app:layout_constraintTop_toBottomOf="@+id/tekstFeedbackMenu" />
+
+                <RadioGroup
+                    android:id="@+id/RadioGroup1"
+                    android:layout_width="160dp"
+                    android:layout_height="140dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="48dp"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    app:layout_constraintEnd_toEndOf="@+id/tekstFeedbackMenu"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/textFeedback1"
+                    app:layout_constraintTop_toBottomOf="@+id/tekstFeedbackMenu">
+
+                    <RadioButton
+                        android:id="@+id/RButton2-1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="Heel erg goed" />
+
+                    <RadioButton
+                        android:id="@+id/RButton2-2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="Goed" />
+
+                    <RadioButton
+                        android:id="@+id/RButton2-3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="Redelijk" />
+
+                    <RadioButton
+                        android:id="@+id/RButton2-4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="Niet heel goed" />
+
+                    <RadioButton
+                        android:id="@+id/RButton2-5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="Niet" />
+
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/buttonTerug"
+                    android:layout_width="240dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="184dp"
+                    android:background="@drawable/btn_shape"
+                    android:text="Verzenden"
+                    android:textColor="@color/White"
+                    android:textSize="30sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/tekstFeedbackMenu"
+                    app:layout_constraintStart_toStartOf="@+id/tekstFeedbackMenu"
+                    app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="330dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="48dp"
+                    android:text="Heb je verder nog een idee voor of een opmerking over de onboarding?"
+                    android:textColor="@color/Black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.493"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFeedback1" />
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="330dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="32dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            </ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tekstFeedbackTitel"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:text="Feedback"
+        android:textColor="@color/White"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</ConstraintLayout>
