@@ -41,8 +41,8 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
         status = new Status("demo", 0, 0, 0, 0, 0, 0);
 
         //------------------
-        helper = new VolleyHelper(getBaseContext(), "http://145.48.232.91:8079/Project3API/"); //Vul hier je eigen ipv4 in
-        helper.get("api.php?studentId=demo", null, this, this);
+        helper = new VolleyHelper(getBaseContext(), "https://adaonboarding.ml/t2/");
+        helper.get("Menu.php?studentId=sgoever", null, this, this);
 
         // Get All data from getListData();
         menuItems = getListData(status);

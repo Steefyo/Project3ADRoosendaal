@@ -7,12 +7,6 @@
     tools:context=".Controller.VideoPagina.CardFragment"
     >
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        app:srcCompat="@drawable/ic_header_img_small" />
-
     <WebView
         android:id="@+id/mWebView"
         android:layout_width="405dp"
@@ -20,10 +14,12 @@
         android:layout_gravity="center"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
+        android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354" />
 
     <TextView
         android:id="@+id/LabelTitel"
@@ -35,24 +31,26 @@
         android:textSize="32dp"
         app:layout_constraintBottom_toTopOf="@+id/mWebView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.781" />
+        app:layout_constraintVertical_bias="0.733" />
 
     <Button
         android:id="@+id/ExitKnop"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:background="@drawable/btn_shape"
-        android:text="Button"
+        android:background="@drawable/custom_button"
+        android:onClick="TerugKnop"
+        android:text="Terug"
         android:textColor="@color/White"
         android:textSize="20sp"
         android:visibility="gone"
-        android:onClick="TerugKnop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mWebView" />
-
+        app:layout_constraintTop_toBottomOf="@+id/mWebView"
+        app:layout_constraintVertical_bias="0.282" />
+    <!-- De Terugknop is niet kapot staat alleen in een andere klas en het werkt.-->
 </androidx.constraintlayout.widget.ConstraintLayout>
