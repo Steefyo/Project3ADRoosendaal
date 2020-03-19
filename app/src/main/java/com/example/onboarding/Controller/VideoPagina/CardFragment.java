@@ -62,7 +62,7 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
         Titel = new ArrayList<String>();
         ids = new ArrayList<String>();
 
-        helper = new VolleyHelper(getContext(), "http://192.168.1.2//Api"); //Vul hier je eigen ipv4 in
+        helper = new VolleyHelper(getContext(), "https://adaonboarding.ml/t2/"); //Vul hier je eigen ipv4 in0
         helper.get("api.php", null, this, this);
     }
 

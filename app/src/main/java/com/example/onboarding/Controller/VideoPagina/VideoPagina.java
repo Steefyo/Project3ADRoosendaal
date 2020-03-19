@@ -33,7 +33,7 @@ public class VideoPagina extends AppCompatActivity implements Response.Listener<
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_pagina);
         Aantal = new ArrayList<Aantal>();
-        helper = new VolleyHelper(getBaseContext(), "http://192.168.1.2//Api"); //Vul hier je eigen ipv4 in
+        helper = new VolleyHelper(getBaseContext(), "https://adaonboarding.ml/t2/"); //Vul hier je eigen ipv4 in
         helper.get("api2.php", null, this, this);
     }
 
