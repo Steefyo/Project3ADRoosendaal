@@ -40,7 +40,7 @@
         android:id="@+id/buttonTerug"
         android:layout_width="240dp"
         android:layout_height="60dp"
-        android:background="@drawable/btn_shape"
+        android:background="@drawable/custom_button"
         android:text="Terug"
         android:textColor="@color/White"
         android:textSize="30sp"

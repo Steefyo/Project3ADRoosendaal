@@ -25,7 +25,7 @@
         android:layout_marginStart="154dp"
         android:layout_marginEnd="170dp"
         android:layout_marginBottom="144dp"
-        android:background="@drawable/btn_shape"
+        android:background="@drawable/custom_button"
         android:drawableEnd="@drawable/arrow_right"
         android:onClick="toMenuPage"
         android:text="@string/txtButton"
