@@ -62,8 +62,8 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
         Titel = new ArrayList<String>();
         ids = new ArrayList<String>();
 
-        helper = new VolleyHelper(getContext(), "https://adaonboarding.ml/t2/"); //Vul hier je eigen ipv4 in0
-        helper.get("api.php", null, this, this);
+        helper = new VolleyHelper(getContext(), "https://adaonboarding.ml/t2/");
+        helper.get("Video.php", null, this, this);
     }
 
     @Override

@@ -33,8 +33,8 @@ public class VideoPagina extends AppCompatActivity implements Response.Listener<
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_pagina);
         Aantal = new ArrayList<Aantal>();
-        helper = new VolleyHelper(getBaseContext(), "https://adaonboarding.ml/t2/"); //Vul hier je eigen ipv4 in
-        helper.get("api2.php", null, this, this);
+        helper = new VolleyHelper(getBaseContext(), "https://adaonboarding.ml/t2/");
+        helper.get("VideoAantal.php", null, this, this);
     }
 
     private ViewPagerAdapter createCardAdapter() {
