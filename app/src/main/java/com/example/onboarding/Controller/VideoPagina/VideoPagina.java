@@ -25,11 +25,24 @@ public class VideoPagina extends AppCompatActivity implements Response.Listener<
     ViewPagerAdapter adapter = new ViewPagerAdapter(this);
     ViewPager2 viewPager;
 
+    String studentId;
+
     private VolleyHelper helper;
     private ArrayList<Aantal> Aantal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                studentId = null;
+            } else {
+                studentId = extras.getString("StudentId");
+            }
+        } else {
+            studentId = (String) savedInstanceState.getSerializable("StudentId");
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_pagina);
         Aantal = new ArrayList<Aantal>();
@@ -44,6 +57,7 @@ public class VideoPagina extends AppCompatActivity implements Response.Listener<
 
     public void TerugKnop(View view) {
         Intent intent = new Intent(this, MenuActivity.class);
+        intent.putExtra("StudentId", studentId);
         startActivity(intent);
     }
 
