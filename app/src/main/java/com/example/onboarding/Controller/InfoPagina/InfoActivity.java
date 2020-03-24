@@ -14,10 +14,23 @@ public class InfoActivity extends AppCompatActivity {
 
     private Button buttonTerug;
 
+    String studentId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
+
+        if(savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                studentId = null;
+            } else {
+                studentId = extras.getString("StudentId");
+            }
+        } else {
+            studentId = (String) savedInstanceState.getSerializable("StudentId");
+        }
 
         buttonTerug = findViewById(R.id.buttonTerug);
         buttonTerug.setOnClickListener(new View.OnClickListener() {
@@ -30,6 +43,7 @@ public class InfoActivity extends AppCompatActivity {
 
     public void sluitInfoActivity() {
         Intent intent = new Intent(this, MenuActivity.class);
+        intent.putExtra("StudentId", studentId);
         startActivity(intent);
     }
 }
