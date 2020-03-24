@@ -14,11 +14,23 @@ import java.util.ArrayList;
 
 public class SocialActivity extends AppCompatActivity {
 
+    String studentId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social);
 
+        if(savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                studentId = null;
+            } else {
+                studentId = extras.getString("StudentId");
+            }
+        } else {
+            studentId = (String) savedInstanceState.getSerializable("StudentId");
+        }
         // Get All data from getListData();
         ArrayList<SocialModel> image_details = getListData();
 

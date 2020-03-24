@@ -33,16 +33,29 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
     ArrayList<MenuModel> menuItems = new ArrayList<>();
     ListView lv1 = null;
 
+    String studentId;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        if(savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                studentId = null;
+            } else {
+                studentId = extras.getString("StudentId");
+            }
+        } else {
+            studentId = (String) savedInstanceState.getSerializable("StudentId");
+        }
 
         // Set default data
         status = new Status("demo", 0, 0, 0, 0, 0, 0);
 
         //------------------
         helper = new VolleyHelper(getBaseContext(), "https://adaonboarding.ml/t2/");
-        helper.get("Menu.php?studentId=sgoever", null, this, this);
+        helper.get("Menu.php?studentId="+studentId, null, this, this);
 
         // Get All data from getListData();
         menuItems = getListData(status);
@@ -52,6 +65,7 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
 
         // Create adapter and onclick
         lv1.setAdapter(new MenuAdapter(this, menuItems));
+
         lv1.setOnItemClickListener(new OnItemClickListener() {
 
             // Calculate automatically which item is selected.
@@ -76,11 +90,11 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
         ArrayList<MenuModel> results = new ArrayList<>();
 
         // Fill the model, Add to the array
-        results.add(new MenuModel(R.drawable.ic_launcher_foreground, "Video's", new Intent(this, VideoPagina.class), status.getFaseVideo()));
-        results.add(new MenuModel(R.drawable.ic_launcher_background, "Social media", new Intent(this, SocialActivity.class), status.getFaseSocial()));
-        results.add(new MenuModel(R.drawable.ic_launcher_foreground, "Personal info", new Intent(this, PersonalActivity.class), status.getFasePraktisch()));
-        results.add(new MenuModel(R.drawable.ic_launcher_background, "Info", new Intent(this, InfoActivity.class), status.getFaseAboutR()));
-        results.add(new MenuModel(R.drawable.ic_launcher_foreground, "Feedback", new Intent(this, FeedbackActivity.class), 0));
+        results.add(new MenuModel(R.drawable.ic_launcher_foreground, "Video's", new Intent(this, VideoPagina.class).putExtra("StudentId", studentId), status.getFaseVideo()));
+        results.add(new MenuModel(R.drawable.ic_launcher_background, "Social media", new Intent(this, SocialActivity.class).putExtra("StudentId", studentId), status.getFaseSocial()));
+        results.add(new MenuModel(R.drawable.ic_launcher_foreground, "Personal info", new Intent(this, PersonalActivity.class).putExtra("StudentId", studentId), status.getFasePraktisch()));
+        results.add(new MenuModel(R.drawable.ic_launcher_background, "Info", new Intent(this, InfoActivity.class).putExtra("StudentId", studentId), status.getFaseAboutR()));
+        //results.add(new MenuModel(R.drawable.ic_launcher_foreground, "Feedback", new Intent(this, FeedbackActivity.class).putExtra("StudentId", studentId),0));
 
         // Return the array
         return results;
@@ -105,6 +119,14 @@ public class MenuActivity extends AppCompatActivity implements Response.Listener
 
                 // Update menu
                 menuItems = getListData(status);
+
+                System.out.println(menuItems);
+
+                if(menuItems.get(0).getStatus() == 1 && menuItems.get(1).getStatus() == 1 && menuItems.get(2).getStatus() == 1 && menuItems.get(3).getStatus() == 1) {
+                    Intent intent = new Intent(this, FeedbackActivity.class);
+                    intent.putExtra("StudentId", studentId);
+                    startActivity(intent);
+                }
 
                 // Refresh the view
                 lv1.setAdapter(new MenuAdapter(this, menuItems));
