@@ -56,6 +56,8 @@ public class VideoPagina extends AppCompatActivity implements Response.Listener<
 
 
     public void TerugKnop(View view) {
+        helper = new VolleyHelper(getBaseContext(), "https://adaonboarding.ml/t2/");
+        helper.get("InsertFase.php?FaseNaam=faseVideo&StudentId="+studentId, null, this, this);
         Intent intent = new Intent(this, MenuActivity.class);
         intent.putExtra("StudentId", studentId);
         startActivity(intent);
