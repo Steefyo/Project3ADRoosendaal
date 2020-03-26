@@ -20,8 +20,12 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="413dp"
-        android:layout_height="594dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
@@ -31,20 +35,23 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="550dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             tools:layout_editor_absoluteX="6dp"
             tools:layout_editor_absoluteY="231dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="1000dp">
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background">
 
                 <TextView
                     android:id="@+id/tekstFeedbackMenu"
-                    android:layout_width="380dp"
+                    android:layout_width="360dp"
                     android:layout_height="120dp"
+                    android:layout_marginLeft="32dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginRight="32dp"
                     android:text="Welkom bij de feedback, hieronder hebben wij een aantal vragen klaar staan voor u. We zouden het zeer op prijs stellen als u deze vragen op waarheid kunt beantwoorden."
                     android:textColor="@color/Black"
                     android:textSize="20sp"
@@ -54,9 +61,9 @@
 
                 <TextView
                     android:id="@+id/textFeedback1"
-                    android:layout_width="210dp"
+                    android:layout_width="190dp"
                     android:layout_height="140dp"
-                    android:layout_marginTop="48dp"
+                    android:layout_marginTop="36dp"
                     android:gravity="center"
                     android:text="Hoe goed heb je deze app en de school leren kennen met behulp van deze onboarding?"
                     android:textColor="@color/Black"
@@ -67,11 +74,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/tekstFeedbackMenu" />
 
                 <RadioGroup
-                    android:id="@+id/RadioGroup1"
+                    android:id="@+id/radio"
                     android:layout_width="160dp"
                     android:layout_height="140dp"
                     android:layout_centerInParent="true"
-                    android:layout_marginTop="48dp"
+                    android:layout_marginTop="36dp"
                     android:orientation="vertical"
                     android:padding="5dp"
                     app:layout_constraintEnd_toEndOf="@+id/tekstFeedbackMenu"
@@ -87,7 +94,8 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Heel erg goed" />
+                        android:text="Heel erg goed"
+                        android:textSize="13dp" />
 
                     <RadioButton
                         android:id="@+id/RButton2-2"
@@ -97,7 +105,8 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Goed" />
+                        android:text="Goed"
+                        android:textSize="13dp" />
 
                     <RadioButton
                         android:id="@+id/RButton2-3"
@@ -107,7 +116,8 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Redelijk" />
+                        android:text="Redelijk"
+                        android:textSize="13dp" />
 
                     <RadioButton
                         android:id="@+id/RButton2-4"
@@ -117,7 +127,8 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Niet heel goed" />
+                        android:text="Niet heel goed"
+                        android:textSize="13dp" />
 
                     <RadioButton
                         android:id="@+id/RButton2-5"
@@ -127,29 +138,33 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Niet" />
+                        android:text="Niet"
+                        android:textSize="13dp" />
 
                 </RadioGroup>
 
                 <Button
-                    android:id="@+id/buttonTerug"
+                    android:id="@+id/buttonAfronden"
                     android:layout_width="240dp"
                     android:layout_height="60dp"
-                    android:layout_marginBottom="184dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
                     android:background="@drawable/custom_button"
                     android:text="Verzenden"
                     android:textColor="@color/White"
                     android:textSize="30sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/tekstFeedbackMenu"
+                    app:layout_constraintHorizontal_bias="0.491"
                     app:layout_constraintStart_toStartOf="@+id/tekstFeedbackMenu"
-                    app:layout_constraintTop_toBottomOf="@+id/editText2" />
+                    app:layout_constraintTop_toBottomOf="@+id/editText2"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="330dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="48dp"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="36dp"
                     android:text="Heb je verder nog een idee voor of een opmerking over de onboarding?"
                     android:textColor="@color/Black"
                     android:textSize="20sp"
@@ -160,12 +175,15 @@
 
                 <EditText
                     android:id="@+id/editText2"
-                    android:layout_width="330dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_width="333dp"
+                    android:layout_height="144dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/edit_text_background"
                     android:ems="10"
                     android:gravity="start|top"
+                    android:hint="Vul hier je opmerking in"
                     android:inputType="textMultiLine"
+                    android:padding="10sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView2" />

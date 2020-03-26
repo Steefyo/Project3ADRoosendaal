@@ -21,6 +21,7 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
+        //StudentId overnemen
         if(savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
@@ -41,6 +42,7 @@ public class InfoActivity extends AppCompatActivity {
         });
     }
 
+    //Functie om info weer af te sluiten en terug naar het menu te gaan.
     public void sluitInfoActivity() {
         Intent intent = new Intent(this, MenuActivity.class);
         intent.putExtra("StudentId", studentId);
