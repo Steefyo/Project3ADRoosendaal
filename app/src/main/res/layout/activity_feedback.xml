@@ -48,11 +48,11 @@
                 <TextView
                     android:id="@+id/tekstFeedbackMenu"
                     android:layout_width="360dp"
-                    android:layout_height="120dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="32dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginRight="32dp"
-                    android:text="Welkom bij de feedback, hieronder hebben wij een aantal vragen klaar staan voor u. We zouden het zeer op prijs stellen als u deze vragen op waarheid kunt beantwoorden."
+                    android:text="@string/feedbackWelkom"
                     android:textColor="@color/Black"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +65,7 @@
                     android:layout_height="140dp"
                     android:layout_marginTop="36dp"
                     android:gravity="center"
-                    android:text="Hoe goed heb je deze app en de school leren kennen met behulp van deze onboarding?"
+                    android:text="@string/feedbackVraag"
                     android:textColor="@color/Black"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="@+id/tekstFeedbackMenu"
@@ -94,7 +94,7 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Heel erg goed"
+                        android:text="@string/radioButtonText1"
                         android:textSize="13dp" />
 
                     <RadioButton
@@ -105,7 +105,7 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Goed"
+                        android:text="@string/radioButtonText2"
                         android:textSize="13dp" />
 
                     <RadioButton
@@ -116,7 +116,7 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Redelijk"
+                        android:text="@string/radioButtonText3"
                         android:textSize="13dp" />
 
                     <RadioButton
@@ -127,7 +127,7 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Niet heel goed"
+                        android:text="@string/radioButtonText4"
                         android:textSize="13dp" />
 
                     <RadioButton
@@ -138,7 +138,7 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Niet"
+                        android:text="@string/radioButtonText5"
                         android:textSize="13dp" />
 
                 </RadioGroup>
@@ -163,9 +163,9 @@
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="330dp"
-                    android:layout_height="65dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="36dp"
-                    android:text="Heb je verder nog een idee voor of een opmerking over de onboarding?"
+                    android:text="@string/feedbackOpmerking"
                     android:textColor="@color/Black"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
