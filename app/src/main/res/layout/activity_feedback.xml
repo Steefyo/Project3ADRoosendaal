@@ -94,7 +94,7 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="@string/radioButtonText1"
+                        android:text="Heel erg goed"
                         android:textSize="13dp" />
 
                     <RadioButton
@@ -105,7 +105,7 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="@string/radioButtonText2"
+                        android:text="Goed"
                         android:textSize="13dp" />
 
                     <RadioButton
@@ -116,7 +116,7 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="@string/radioButtonText3"
+                        android:text="Redelijk"
                         android:textSize="13dp" />
 
                     <RadioButton
@@ -127,7 +127,7 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="@string/radioButtonText4"
+                        android:text="Niet heel goed"
                         android:textSize="13dp" />
 
                     <RadioButton
@@ -138,7 +138,7 @@
                         android:gravity="center"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="@string/radioButtonText5"
+                        android:text="Niet"
                         android:textSize="13dp" />
 
                 </RadioGroup>
