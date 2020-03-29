@@ -24,7 +24,7 @@
         android:layout_height="55dp"
         android:layout_marginStart="154dp"
         android:layout_marginEnd="170dp"
-        android:layout_marginBottom="144dp"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/custom_button"
         android:drawableEnd="@drawable/arrow_right"
         android:onClick="toMenuPage"
@@ -52,12 +52,19 @@
 
     <TextView
         android:id="@+id/tvWelkomText"
-        android:layout_width="353dp"
-        android:layout_height="271dp"
-        android:textSize="15sp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="10sp"
         android:text="@string/txtWelcome"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/btnNext"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
