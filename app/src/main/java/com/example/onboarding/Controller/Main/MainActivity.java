@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity implements Response.Listener
         setContentView(R.layout.activity_main);
 
         //Set Default Data
-        Student = new User("Demo", "Test", "Test", "ICT");
+        Student = new User("Demo", "Test", "Test", "ICT","Demo@email.com","19-07-1998","Roosendaal","4732BZ");
 
         helper = new VolleyHelper(getBaseContext(), "https://adaonboarding.ml/t2/");
-        helper.get("Welkom.php?studentId=" + studentId, null, this, this);
+        helper.get("User.php?studentId=" + studentId, null, this, this);
 
         Students = getListData(Student);
 
