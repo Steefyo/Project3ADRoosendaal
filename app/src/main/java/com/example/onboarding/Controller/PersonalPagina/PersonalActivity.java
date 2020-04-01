@@ -80,7 +80,7 @@ public class PersonalActivity extends AppCompatActivity implements Response.List
                 TvNaam.setText("Naam : "+user.getvoornaam()+" "+user.getachternaam());
                 TvOpleiding.setText("Opleiding : "+user.getopleiding());
                 TvEmail.setText("Email : "+user.getEmail());
-                TvBday.setText("B.O.D : "+user.getBday());
+                TvBday.setText("D.O.B : "+user.getBday());
                 TvWoonplaats.setText("Woonplaats : "+user.getWoonplaats());
                 TvPostcode.setText("Postcode : "+user.getPostcode());
             }
