@@ -29,12 +29,13 @@ import java.util.ArrayList;
 
 public class CardFragment extends Fragment implements Response.Listener<JSONObject>, Response.ErrorListener {
     private static final String ARG_COUNT = "param1";
+    //elke keer als je een pagina verschuift word er 1 toegevoegd bij de counter
     private Integer counter;
 
     private VolleyHelper helper;
     private ArrayList<Video> Videos;
 
-    private Integer iets;
+    private Integer VideoCounter;
 
     private ArrayList<String> ids;
     private ArrayList<String> Titel;
@@ -57,7 +58,7 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
         if (getArguments() != null) {
             counter = getArguments().getInt(ARG_COUNT);
         }
-        iets = 0;
+        VideoCounter = 0;
         Videos = new ArrayList<Video>();
         Titel = new ArrayList<String>();
         ids = new ArrayList<String>();
@@ -83,7 +84,7 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
             for(Video video : Videos) {
                 ids.add(video.GetVideoId());
                 Titel.add(video.GetVideoTitel());
-                iets++;
+                VideoCounter++;
             }
 
             TextView TvTitel = this.getView().findViewById(R.id.LabelTitel);
@@ -93,7 +94,7 @@ public class CardFragment extends Fragment implements Response.Listener<JSONObje
             mWebView.setWebViewClient(new WebViewClient());
             mWebView.loadUrl("http://www.youtube.com/embed/" + ids.get(counter));
 
-            if (counter == iets-1) {
+            if (counter == VideoCounter-1) {
                 Button btnExit = this.getView().findViewById(R.id.ExitKnop);
                 btnExit.setVisibility(View.VISIBLE);
             }

@@ -18,4 +18,5 @@
     <string name="radioButtonText4">Niet heel goed</string>
     <string name="radioButtonText5">Niet</string>
     <string name="feedbackOpmerking">Heb je verder nog een idee voor of een opmerking over de onboarding?</string>
+    <string name="PlaceHolderr">PlaceHolder</string>
 </resources>

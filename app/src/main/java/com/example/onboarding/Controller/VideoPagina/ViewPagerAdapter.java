@@ -20,10 +20,12 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
         return CardFragment.newInstance(position);
     }
 
+    //dit is het aantal paginas dat gemaakt word.
     public void setN(int N) {
         this.NUM_VIEWS = N;
     }
 
+    //hier word de aantal paginas opgevraagt.
     @Override
     public int getItemCount() {
         return NUM_VIEWS;

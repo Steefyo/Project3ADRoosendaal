@@ -5,6 +5,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.android.volley.Response;
@@ -34,6 +35,7 @@ public class VideoPagina extends AppCompatActivity implements Response.Listener<
     protected void onCreate(Bundle savedInstanceState) {
         if(savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
+            //StudentId ophalen.
             if(extras == null) {
                 studentId = null;
             } else {
@@ -46,6 +48,7 @@ public class VideoPagina extends AppCompatActivity implements Response.Listener<
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_pagina);
         Aantal = new ArrayList<Aantal>();
+        //Haalt het aantal Videos in de database op
         helper = new VolleyHelper(getBaseContext(), "https://adaonboarding.ml/t2/");
         helper.get("VideoAantal.php", null, this, this);
     }
@@ -57,6 +60,7 @@ public class VideoPagina extends AppCompatActivity implements Response.Listener<
 
     public void TerugKnop(View view) {
         helper = new VolleyHelper(getBaseContext(), "https://adaonboarding.ml/t2/");
+        //geeft de FaseNaam en het StudentId mee.
         helper.get("InsertFase.php?FaseNaam=faseVideo&StudentId="+studentId, null, this, this);
         Intent intent = new Intent(this, MenuActivity.class);
         intent.putExtra("StudentId", studentId);
@@ -65,7 +69,7 @@ public class VideoPagina extends AppCompatActivity implements Response.Listener<
 
     @Override
     public void onErrorResponse(VolleyError error) {
-
+        Log.e("Volley Error", error.toString());
     }
 
     @Override
@@ -77,6 +81,7 @@ public class VideoPagina extends AppCompatActivity implements Response.Listener<
                 Aantal.add(new Aantal(array.getJSONObject(i)));
             }
             for (Aantal aantal : Aantal){
+                //geeft het aantal door aan de adapter
                adapter.setN(aantal.getAantal());
             }
 
