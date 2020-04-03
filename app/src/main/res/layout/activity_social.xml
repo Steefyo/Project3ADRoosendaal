@@ -17,5 +17,15 @@
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="562dp" />
+
+    <Button
+        android:id="@+id/BtnTerug"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:text="Terug"
+        android:onClick="SluitSociaal"
+        android:textColor="@color/White"
+        android:textSize="30sp" />
 </LinearLayout>
