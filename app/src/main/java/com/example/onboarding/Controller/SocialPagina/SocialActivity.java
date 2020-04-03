@@ -3,18 +3,27 @@ package com.example.onboarding.Controller.SocialPagina;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.example.onboarding.Controller.MenuPagina.MenuActivity;
+import com.example.onboarding.Helpers.VolleyHelper;
 import com.example.onboarding.R;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class SocialActivity extends AppCompatActivity {
+public class SocialActivity extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener {
 
     String studentId;
+    private VolleyHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,5 +82,24 @@ public class SocialActivity extends AppCompatActivity {
 
         // Return the array
         return results;
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Log.e("Volley Error", error.toString());
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+    //word niet gebruikt maar het moet erin vanwege de implement
+    }
+
+    //Functie om Social weer af te sluiten en terug naar het menu te gaan.
+    public void SluitSociaal(View view) {
+        helper = new VolleyHelper(getBaseContext(), "https://adaonboarding.ml/t2/");
+        helper.get("InsertFase.php?FaseNaam=faseSocial&StudentId="+studentId, null, this, this);
+        Intent intent = new Intent(this, MenuActivity.class);
+        intent.putExtra("StudentId", studentId);
+        startActivity(intent);
     }
 }

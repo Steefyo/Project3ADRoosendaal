@@ -65,7 +65,7 @@ public class InfoActivity extends AppCompatActivity implements Response.Listener
 
     @Override
     public void onResponse(JSONObject response) {
-
+    //word niet gebruikt maar het moet erin vanwege de implement
     }
 
 }
