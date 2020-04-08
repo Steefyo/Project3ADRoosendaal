@@ -70,7 +70,7 @@ public class PersonalActivity extends AppCompatActivity implements Response.List
         TvBday = findViewById(R.id.TxtBday);
         TvWoonplaats = findViewById(R.id.TxtWoonPlaats);
         TvPostcode = findViewById(R.id.TxtPostCode);
-        //Haal alle gegevens van student op
+        //Haal alle gegevens van student op.
         try {
             JSONArray array = jsonObject.getJSONArray("student");
             for (int i = 0; i < array.length(); i++) {
