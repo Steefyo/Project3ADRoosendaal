@@ -50,6 +50,7 @@ public class PersonalActivity extends AppCompatActivity implements Response.List
         } else {
             studentId = (String) savedInstanceState.getSerializable("StudentId");
         }
+        //Haal alle gegevens van een student op
         helper = new VolleyHelper(getBaseContext(), "https://adaonboarding.ml/t2/");
         helper.get("User.php?studentId=" + studentId, null, this, this);
     }
@@ -61,7 +62,7 @@ public class PersonalActivity extends AppCompatActivity implements Response.List
 
     @Override
     public void onResponse(JSONObject jsonObject) {
-
+    //Maak alle Tekst views aan.
         TvStudentId = findViewById(R.id.TxtId);
         TvNaam = findViewById(R.id.TxtNaam);
         TvOpleiding = findViewById(R.id.TxtOpleiding);
@@ -69,12 +70,13 @@ public class PersonalActivity extends AppCompatActivity implements Response.List
         TvBday = findViewById(R.id.TxtBday);
         TvWoonplaats = findViewById(R.id.TxtWoonPlaats);
         TvPostcode = findViewById(R.id.TxtPostCode);
-
+        //Haal alle gegevens van student op.
         try {
             JSONArray array = jsonObject.getJSONArray("student");
             for (int i = 0; i < array.length(); i++) {
                 Users.add(new User(array.getJSONObject(i)));
             }
+            //Zet alle gegevens in zn Tekst view
             for (User user : Users) {
                 TvStudentId.setText("StudentId : "+user.getStudentId());
                 TvNaam.setText("Naam : "+user.getvoornaam()+" "+user.getachternaam());
